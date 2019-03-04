@@ -54,9 +54,9 @@ public class registerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final String fullname = txt_fullName.getText().toString().trim();
-                final String age = txt_age.getText().toString().trim();
-                final String email = txt_email.getText().toString().trim();
+                final String fullname = txt_fullName.getText().toString().trim().toLowerCase();
+                final String age = txt_age.getText().toString().trim().toLowerCase();
+                final String email = txt_email.getText().toString().trim().toLowerCase();
                 final String password = txt_password.getText().toString().trim();
 
                 if (radioGenderMale.isSelected()) {

@@ -131,7 +131,8 @@
             android:paddingBottom="5dp"
             android:text="Login"
             android:textAlignment="textEnd"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            />
 
         <Button
             android:id="@+id/userRegister"
