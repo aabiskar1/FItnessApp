@@ -5,6 +5,38 @@
     "project_id": "fitnessapp-a85c5",
     "storage_bucket": "fitnessapp-a85c5.appspot.com"
   },
-  "client": [],
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991125668092:android:6ff2158486db68d4",
+        "android_client_info": {
+          "package_name": "com.example.fitnessapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991125668092-o5amtq5o06gsdmik3eb6f1erfbrf6ldj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8K17Db3RYJFHOSLG0XwPGzoyjjOZIdS8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
   "configuration_version": "1"
 }
