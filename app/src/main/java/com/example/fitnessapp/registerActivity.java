@@ -2,6 +2,7 @@ package com.example.fitnessapp;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -52,9 +53,9 @@ public class registerActivity extends AppCompatActivity {
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
 
-                final String fullname = txt_fullName.getText().toString().trim().toLowerCase();
+                final String fullname = txt_fullName.getText().toString().trim();
                 final String age = txt_age.getText().toString().trim().toLowerCase();
                 final String email = txt_email.getText().toString().trim().toLowerCase();
                 final String password = txt_password.getText().toString().trim();
@@ -99,7 +100,9 @@ public class registerActivity extends AppCompatActivity {
 
 
                                 else {
-                                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    Snackbar.make(v, task.getException().getMessage(), Snackbar.LENGTH_LONG)
+                                            .setAction("Action", null).show();
+                                    //Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
                                 }
 

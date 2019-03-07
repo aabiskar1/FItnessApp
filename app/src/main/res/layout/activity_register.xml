@@ -10,140 +10,151 @@
     tools:context=".registerActivity">
 
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="213dp"
-        app:srcCompat="@mipmap/icon" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:includeFontPadding="false"
-        android:paddingTop="30dp"
-        android:text="Fitness App"
-        android:textAlignment="center"
-        android:textSize="36sp" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:includeFontPadding="false"
-        android:paddingTop="10dp"
-        android:text="Stay fit and healthy"
-        android:textAlignment="center"
-        android:textSize="25sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="bottom"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Registration"
-            android:textAlignment="center"
-            android:textSize="36sp" />
-
-        <EditText
-            android:id="@+id/fullNameTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Full Name"
-            android:text="" />
-
-        <EditText
-            android:id="@+id/ageTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Age"
-            android:text="" />
-
-        <EditText
-            android:id="@+id/emailTxtregister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:text="" />
-
-        <EditText
-            android:id="@+id/passwordTxtRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:text="" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="213dp"
+                app:srcCompat="@mipmap/icon" />
 
             <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                android:paddingTop="2dp"
-                android:text="Gender: "
-                android:textSize="18sp" />
+                android:fontFamily="sans-serif-medium"
+                android:includeFontPadding="false"
+                android:paddingTop="30dp"
+                android:text="Fitness App"
+                android:textAlignment="center"
+                android:textSize="36sp" />
 
-            <RadioGroup
-                android:id="@+id/gender"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:includeFontPadding="false"
+                android:paddingTop="10dp"
+                android:text="Stay fit and healthy"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:gravity="bottom"
+                android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/radioMale"
+                <TextView
+                    android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Male" />
+                    android:text="Registration"
+                    android:textAlignment="center"
+                    android:textSize="36sp" />
 
-                <RadioButton
-                    android:id="@+id/radioFemale"
+                <EditText
+                    android:id="@+id/fullNameTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="Full Name"
+                    android:text="" />
+
+                <EditText
+                    android:id="@+id/ageTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Age"
+                    android:text="" />
+
+                <EditText
+                    android:id="@+id/emailTxtregister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:text="" />
+
+                <EditText
+                    android:id="@+id/passwordTxtRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:text="" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="Female" />
+                    android:orientation="horizontal">
 
-            </RadioGroup>
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:paddingTop="2dp"
+                        android:text="Gender: "
+                        android:textSize="18sp" />
 
+                    <RadioGroup
+                        android:id="@+id/gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioMale"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Male" />
+
+                        <RadioButton
+                            android:id="@+id/radioFemale"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Female" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/userRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/roundedbtn"
+                    android:text="Register" />
+
+                <TextView
+                    android:id="@+id/registerLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:padding="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Click Here to Login"
+                    android:textAlignment="textEnd"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/registerLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:paddingBottom="5dp"
-            android:text="Login"
-            android:textAlignment="textEnd"
-            android:textSize="18sp"
-            />
-
-        <Button
-            android:id="@+id/userRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center"
-            android:layout_margin="5dp"
-            android:background="@drawable/roundedbtn"
-            android:text="Register" />
-
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

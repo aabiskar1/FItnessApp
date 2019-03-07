@@ -13,7 +13,9 @@
 
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".loginActivity"
-            android:theme="@style/AppTheme.NoActionBarFullScreen"></activity>
+            android:theme="@style/AppTheme.NoActionBarFullScreen">
+
+        </activity>
         <activity android:name=".registerActivity"
             android:theme="@style/AppTheme.NoActionBarFullScreen"
             />

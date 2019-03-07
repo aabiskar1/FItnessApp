@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +33,7 @@ public class ProfileFragment extends Fragment {
 
 
 
+
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -43,14 +46,22 @@ public class ProfileFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_profile,container,false);
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
-
         reference = FirebaseDatabase.getInstance().getReference().child("UserLists").child(user.getEmail().replace(".",","));
-        final TextView tvPhone = (TextView) v.findViewById(R.id.nametext);
+        final TextView nametxt = (TextView) v.findViewById(R.id.nametext);
+        final TextView agetxt = (TextView) v.findViewById(R.id.getAge);
+        final TextView emailtxt = (TextView) v.findViewById(R.id.getEmail);
+        final TextView nametxt2 = (TextView) v.findViewById(R.id.getName);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String name = dataSnapshot.child("fullname").getValue().toString();
-                tvPhone.setText(name);
+                String age = dataSnapshot.child("age").getValue().toString();
+                String email = dataSnapshot.child("email").getValue().toString();
+                nametxt.setText(name);
+                nametxt2.setText(name);
+                agetxt.setText(age);
+                emailtxt.setText(email);
+
             }
 
             @Override
