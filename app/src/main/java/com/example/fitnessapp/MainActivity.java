@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -61,15 +62,15 @@ public class MainActivity extends AppCompatActivity
                     return true;
                 case R.id.navigation_notifications:
                     removeFragment();
+                    uppdateCustomerDetails();
                     return true;
                 case R.id.navigation_help:
-                    removeFragment();
+                    adminFragment();
                     return true;
             }
             return false;
         }
     };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,11 +84,12 @@ public class MainActivity extends AppCompatActivity
         homeFragment();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        //.setAction("Action", null).show();
+                userTodoListFragment();
             }
         });
 
@@ -180,7 +182,7 @@ public class MainActivity extends AppCompatActivity
             profileFragment();
 
         } else if (id == R.id.nav_slideshow) {
-            removeFragment();
+            uppdateCustomerDetails();
 
         } else if (id == R.id.nav_manage) {
             removeFragment();
@@ -205,6 +207,11 @@ public class MainActivity extends AppCompatActivity
                 .commit();
     }
 
+    public void adminFragment() {
+        Intent myIntent = new Intent(MainActivity.this, AdminLandingPage.class);
+        startActivity(myIntent);
+    }
+
     public void homeFragment() {
         removeFragment();
         HomeFragment fragment = new HomeFragment();
@@ -220,6 +227,21 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().remove(fragment).commit();
         }
 
+    }
+
+    public void uppdateCustomerDetails() {
+        Intent myIntent = new Intent(MainActivity.this, updateCustomer.class);
+        startActivity(myIntent);
+    }
+
+
+    public void userTodoListFragment() {
+        removeFragment();
+        UserToDoListFragment fragment = new UserToDoListFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragmentContainer, fragment)
+                .commit();
     }
 
 }

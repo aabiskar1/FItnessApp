@@ -12,7 +12,7 @@ Button registerBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_screen);
+        setContentView(R.layout.activity_start_page);
         loginBtn = findViewById(R.id.loginBtnStart);
         registerBtn = findViewById(R.id.registerBtnStart);
 
@@ -27,7 +27,7 @@ Button registerBtn;
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(startScreen.this,registerActivity.class);
+                Intent intent = new Intent(startScreen.this,registerPage.class);
                 startActivity(intent);
             }
         });

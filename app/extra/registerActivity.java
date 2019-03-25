@@ -22,6 +22,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class registerActivity extends AppCompatActivity {
     Button registerBtn;
     String gender;
@@ -54,11 +58,12 @@ public class registerActivity extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-
+                final String reg_date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 final String fullname = txt_fullName.getText().toString().trim();
                 final String age = txt_age.getText().toString().trim().toLowerCase();
                 final String email = txt_email.getText().toString().trim().toLowerCase();
                 final String password = txt_password.getText().toString().trim();
+                final String type = "user";
 
                 if (radioGenderMale.isSelected()) {
                     gender = "Male";
@@ -93,7 +98,8 @@ public class registerActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Toast.makeText(registerActivity.this, "Registration Complete", Toast.LENGTH_SHORT).show();
-                                    registrationdetails registrationDetails = new registrationdetails(fullname,age,email,gender);
+
+                                    registrationdetails registrationDetails = new registrationdetails(fullname,age,email,reg_date,type);
                                     registrationdetails.child(email.replace(".",",")).setValue(registrationDetails);
                                     startActivity(new Intent(getApplicationContext(), loginActivity.class));
                                 }
